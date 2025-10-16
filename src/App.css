@@ -5,24 +5,28 @@
   box-sizing: border-box;
   overflow: hidden;
 }
-
+.app-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
 .landing-page {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-color: #f8f8f8;
+  transition: opacity 1s ease;
 }
-
 .background-image {
+  background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
-  background-size: 100% 100%;
-  background-position: center;
-  filter: brightness(0.8);
+  z-index: -1;
 }
 .content {
   display: flex;
@@ -37,9 +41,6 @@
 }
 
 .landing_content {
- margin-top: 430px;
-  margin-left: 100px;
-  transform: translate(-50%, -50%);
   z-index: 1;
   text-align: center;
   /* background-color: red; */
@@ -118,13 +119,15 @@
   .content {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
   }
 
   .landing_content {
+    display: flex;
+    justify-content: center;
     margin-top: 100px; /* Adjust as needed */
-    margin-left: 0;
     width: 80%; /* Adjust as needed */
     text-align: center;
   }
@@ -144,4 +147,8 @@
   .aboutus_container {
     width: 90%; /* Adjust as needed */
   }
+}
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }
